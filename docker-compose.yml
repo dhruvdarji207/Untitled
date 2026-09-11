@@ -1,0 +1,15 @@
+services:
+  securelab:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      SESSION_SECRET: change-me-for-any-shared-host
+    volumes:
+      - securelab-data:/app/data
+    # After the image exists locally you may add:
+    # network_mode: "none"
+    # (do not use that during the image build / pull)
+
+volumes:
+  securelab-data:
